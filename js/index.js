@@ -96,6 +96,11 @@ function save() {
 function loadData() {
   let tasksString = localStorage.getItem("tasks");
   tasks = JSON.parse(tasksString);
+
+  if (!tasks) {
+    tasks = [];
+  }
+
   renderTask();
 }
 loadData();
